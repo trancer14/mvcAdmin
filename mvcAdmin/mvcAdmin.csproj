@@ -1,0 +1,789 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{63875A0D-6B7E-400C-B654-391793E97DDA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mvcAdmin</RootNamespace>
+    <AssemblyName>mvcAdmin</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\admin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\kisiDetay_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\musteriler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admintema\404.html" />
+    <Content Include="admintema\500.html" />
+    <Content Include="admintema\accordion.html" />
+    <Content Include="admintema\add-course.html" />
+    <Content Include="admintema\add-department.html" />
+    <Content Include="admintema\add-library-assets.html" />
+    <Content Include="admintema\add-professor.html" />
+    <Content Include="admintema\add-student.html" />
+    <Content Include="admintema\advance-form-element.html" />
+    <Content Include="admintema\alerts.html" />
+    <Content Include="admintema\all-courses.html" />
+    <Content Include="admintema\all-professors.html" />
+    <Content Include="admintema\all-students.html" />
+    <Content Include="admintema\analytics.html" />
+    <Content Include="admintema\area-charts.html" />
+    <Content Include="admintema\bar-charts.html" />
+    <Content Include="admintema\basic-form-element.html" />
+    <Content Include="admintema\buttons.html" />
+    <Content Include="admintema\c3.html" />
+    <Content Include="admintema\code-editor.html" />
+    <Content Include="admintema\course-info.html" />
+    <Content Include="admintema\course-payment.html" />
+    <Content Include="admintema\css\accordions.css" />
+    <Content Include="admintema\css\alerts.css" />
+    <Content Include="admintema\css\animate.css" />
+    <Content Include="admintema\css\bootstrap.min.css" />
+    <Content Include="admintema\css\buttons.css" />
+    <Content Include="admintema\css\c3\c3.min.css" />
+    <Content Include="admintema\css\calendar\fullcalendar.min.css" />
+    <Content Include="admintema\css\calendar\fullcalendar.print.min.css" />
+    <Content Include="admintema\css\chosen\bootstrap-chosen.css" />
+    <Content Include="admintema\css\chosen\chosen-sprite.png" />
+    <Content Include="admintema\css\code-editor\ambiance.css" />
+    <Content Include="admintema\css\code-editor\codemirror.css" />
+    <Content Include="admintema\css\colorpicker\colorpicker.css" />
+    <Content Include="admintema\css\cropper\cropper.min.css" />
+    <Content Include="admintema\css\data-table\bootstrap-editable.css" />
+    <Content Include="admintema\css\data-table\bootstrap-table.css" />
+    <Content Include="admintema\css\datapicker\colorpicker.css" />
+    <Content Include="admintema\css\datapicker\datepicker3.css" />
+    <Content Include="admintema\css\dropzone\dropzone.css" />
+    <Content Include="admintema\css\duallistbox\bootstrap-duallistbox.min.css" />
+    <Content Include="admintema\css\editor\bootstrap-editable.css" />
+    <Content Include="admintema\css\editor\datetimepicker.css" />
+    <Content Include="admintema\css\editor\select2.css" />
+    <Content Include="admintema\css\editor\x-editor-style.css" />
+    <Content Include="admintema\css\educate-custon-icon.css" />
+    <Content Include="admintema\css\font-awesome.min.css" />
+    <Content Include="admintema\css\form.css" />
+    <Content Include="admintema\css\form\all-type-forms.css" />
+    <Content Include="admintema\css\form\themesaller-forms.css" />
+    <Content Include="admintema\css\ionRangeSlider\ion.rangeSlider.css" />
+    <Content Include="admintema\css\ionRangeSlider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="admintema\css\ionRangeSlider\sprite-skin-flat.png" />
+    <Content Include="admintema\css\main.css" />
+    <Content Include="admintema\css\meanmenu.min.css" />
+    <Content Include="admintema\css\metisMenu\metisMenu-vertical.css" />
+    <Content Include="admintema\css\metisMenu\metisMenu.min.css" />
+    <Content Include="admintema\css\modals.css" />
+    <Content Include="admintema\css\morrisjs\morris.css" />
+    <Content Include="admintema\css\normalize.css" />
+    <Content Include="admintema\css\notifications\Lobibox.min.css" />
+    <Content Include="admintema\css\notifications\notifications.css" />
+    <Content Include="admintema\css\owl.carousel.css" />
+    <Content Include="admintema\css\owl.theme.css" />
+    <Content Include="admintema\css\owl.transitions.css" />
+    <Content Include="admintema\css\preloader\preloader-style.css" />
+    <Content Include="admintema\css\responsive.css" />
+    <Content Include="admintema\css\scrollbar\jquery.mCustomScrollbar.min.css" />
+    <Content Include="admintema\css\select2\select2.min.css" />
+    <Content Include="admintema\css\summernote\summernote.css" />
+    <Content Include="admintema\css\tabs.css" />
+    <Content Include="admintema\css\touchspin\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="admintema\css\tree-viewer\32px.png" />
+    <Content Include="admintema\css\tree-viewer\throbber.gif" />
+    <Content Include="admintema\css\tree-viewer\tree-viewer.css" />
+    <Content Include="admintema\data-maps.html" />
+    <Content Include="admintema\data-table.html" />
+    <Content Include="admintema\departments.html" />
+    <Content Include="admintema\dual-list-box.html" />
+    <Content Include="admintema\edit-course.html" />
+    <Content Include="admintema\edit-department.html" />
+    <Content Include="admintema\edit-library-assets.html" />
+    <Content Include="admintema\edit-professor.html" />
+    <Content Include="admintema\edit-student.html" />
+    <Content Include="admintema\events.html" />
+    <Content Include="admintema\fonts\educate-icon.svg" />
+    <Content Include="admintema\fonts\fontawesome-webfont.svg" />
+    <Content Include="admintema\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="admintema\google-map.html" />
+    <Content Include="admintema\images-cropper.html" />
+    <Content Include="admintema\img\blog-details\1.jpg" />
+    <Content Include="admintema\img\clear.png" />
+    <Content Include="admintema\img\contact\1.jpg" />
+    <Content Include="admintema\img\contact\2.jpg" />
+    <Content Include="admintema\img\contact\3.jpg" />
+    <Content Include="admintema\img\contact\4.jpg" />
+    <Content Include="admintema\img\courses\1.jpg" />
+    <Content Include="admintema\img\courses\2.jpg" />
+    <Content Include="admintema\img\courses\3.jpg" />
+    <Content Include="admintema\img\cropper\1.jpg" />
+    <Content Include="admintema\img\favicon.ico" />
+    <Content Include="admintema\img\green1.png" />
+    <Content Include="admintema\img\loading.gif" />
+    <Content Include="admintema\img\logo\logo.png" />
+    <Content Include="admintema\img\logo\logosn.png" />
+    <Content Include="admintema\img\notification\1.jpg" />
+    <Content Include="admintema\img\notification\2.jpg" />
+    <Content Include="admintema\img\notification\3.jpg" />
+    <Content Include="admintema\img\notification\4.jpg" />
+    <Content Include="admintema\img\notification\5.jpg" />
+    <Content Include="admintema\img\notification\6.jpg" />
+    <Content Include="admintema\img\product\book-1.jpg" />
+    <Content Include="admintema\img\product\book-2.jpg" />
+    <Content Include="admintema\img\product\book-3.jpg" />
+    <Content Include="admintema\img\product\book-4.jpg" />
+    <Content Include="admintema\img\product\pro4.jpg" />
+    <Content Include="admintema\img\product\profile-bg.jpg" />
+    <Content Include="admintema\img\profile\1.jpg" />
+    <Content Include="admintema\img\student\1.jpg" />
+    <Content Include="admintema\img\student\2.jpg" />
+    <Content Include="admintema\img\student\3.jpg" />
+    <Content Include="admintema\img\student\4.jpg" />
+    <Content Include="admintema\index-1.html" />
+    <Content Include="admintema\index-2.html" />
+    <Content Include="admintema\index.html" />
+    <Content Include="admintema\js\bootstrap.min.js" />
+    <Content Include="admintema\js\c3-charts\c3-active.js" />
+    <Content Include="admintema\js\c3-charts\c3.min.js" />
+    <Content Include="admintema\js\c3-charts\d3.min.js" />
+    <Content Include="admintema\js\calendar\fullcalendar-active.js" />
+    <Content Include="admintema\js\calendar\fullcalendar.min.js" />
+    <Content Include="admintema\js\calendar\moment.min.js" />
+    <Content Include="admintema\js\card.js" />
+    <Content Include="admintema\js\charts\area-chart.js" />
+    <Content Include="admintema\js\charts\bar-chart.js" />
+    <Content Include="admintema\js\charts\Chart.js" />
+    <Content Include="admintema\js\charts\line-chart.js" />
+    <Content Include="admintema\js\charts\rounded-chart.js" />
+    <Content Include="admintema\js\chart\jquery.peity.min.js" />
+    <Content Include="admintema\js\chart\peity-active.js" />
+    <Content Include="admintema\js\chosen\chosen-active.js" />
+    <Content Include="admintema\js\chosen\chosen.jquery.js" />
+    <Content Include="admintema\js\chosen\chosen.jquery.min.js" />
+    <Content Include="admintema\js\code-editor\code-editor-active.js" />
+    <Content Include="admintema\js\code-editor\code-editor.js" />
+    <Content Include="admintema\js\code-editor\codemirror.js" />
+    <Content Include="admintema\js\colorpicker\color-picker-active.js" />
+    <Content Include="admintema\js\colorpicker\jquery.spectrum.min.js" />
+    <Content Include="admintema\js\counterup\counterup-active.js" />
+    <Content Include="admintema\js\counterup\jquery.counterup.min.js" />
+    <Content Include="admintema\js\counterup\waypoints.min.js" />
+    <Content Include="admintema\js\cropper\cropper-actice.js" />
+    <Content Include="admintema\js\cropper\cropper.min.js" />
+    <Content Include="admintema\js\data-map\d3.min.js" />
+    <Content Include="admintema\js\data-map\data-maps-active.js" />
+    <Content Include="admintema\js\data-map\datamaps.all.min.js" />
+    <Content Include="admintema\js\data-map\topojson.js" />
+    <Content Include="admintema\js\data-table\bootstrap-editable.js" />
+    <Content Include="admintema\js\data-table\bootstrap-table-editable.js" />
+    <Content Include="admintema\js\data-table\bootstrap-table-export.js" />
+    <Content Include="admintema\js\data-table\bootstrap-table-resizable.js" />
+    <Content Include="admintema\js\data-table\bootstrap-table.js" />
+    <Content Include="admintema\js\data-table\colResizable-1.5.source.js" />
+    <Content Include="admintema\js\data-table\data-table-active.js" />
+    <Content Include="admintema\js\data-table\tableExport.js" />
+    <Content Include="admintema\js\datapicker\bootstrap-datepicker.js" />
+    <Content Include="admintema\js\datapicker\bootstrap-datepicker.min.js" />
+    <Content Include="admintema\js\datapicker\datepicker-active.js" />
+    <Content Include="admintema\js\datepicker\datepicker-active.js" />
+    <Content Include="admintema\js\datepicker\jquery-ui.min.js" />
+    <Content Include="admintema\js\dropzone\dropzone.js" />
+    <Content Include="admintema\js\duallistbox\duallistbox.active.js" />
+    <Content Include="admintema\js\duallistbox\jquery.bootstrap-duallistbox.js" />
+    <Content Include="admintema\js\e-payment.js" />
+    <Content Include="admintema\js\editable\bootstrap-datetimepicker.js" />
+    <Content Include="admintema\js\editable\bootstrap-editable.js" />
+    <Content Include="admintema\js\editable\jquery.mockjax.js" />
+    <Content Include="admintema\js\editable\mock-active.js" />
+    <Content Include="admintema\js\editable\moment.min.js" />
+    <Content Include="admintema\js\editable\select2.js" />
+    <Content Include="admintema\js\editable\xediable-active.js" />
+    <Content Include="admintema\js\form-validation\form-active.js" />
+    <Content Include="admintema\js\form-validation\jquery.form.min.js" />
+    <Content Include="admintema\js\form-validation\jquery.validate.min.js" />
+    <Content Include="admintema\js\google.maps\google.maps-active.js" />
+    <Content Include="admintema\js\icheck\icheck-active.js" />
+    <Content Include="admintema\js\icheck\icheck.min.js" />
+    <Content Include="admintema\js\input-mask\jasny-bootstrap.min.js" />
+    <Content Include="admintema\js\ionRangeSlider\ion.rangeSlider.active.js" />
+    <Content Include="admintema\js\ionRangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="admintema\js\jquery-price-slider.js" />
+    <Content Include="admintema\js\jquery.maskedinput.min.js" />
+    <Content Include="admintema\js\jquery.meanmenu.js" />
+    <Content Include="admintema\js\jquery.payform.min.js" />
+    <Content Include="admintema\js\jquery.scrollUp.min.js" />
+    <Content Include="admintema\js\jquery.sticky.js" />
+    <Content Include="admintema\js\knob\jquery.knob.js" />
+    <Content Include="admintema\js\knob\knob-active.js" />
+    <Content Include="admintema\js\main.js" />
+    <Content Include="admintema\js\masking-active.js" />
+    <Content Include="admintema\js\metisMenu\metisMenu-active.js" />
+    <Content Include="admintema\js\metisMenu\metisMenu.min.js" />
+    <Content Include="admintema\js\morrisjs\home3-active.js" />
+    <Content Include="admintema\js\morrisjs\morris-active-pro.js" />
+    <Content Include="admintema\js\morrisjs\morris-active.js" />
+    <Content Include="admintema\js\morrisjs\morris.js" />
+    <Content Include="admintema\js\morrisjs\raphael-min.js" />
+    <Content Include="admintema\js\multiple-email\multiple-email-active.js" />
+    <Content Include="admintema\js\notifications\Lobibox.js" />
+    <Content Include="admintema\js\notifications\notification-active.js" />
+    <Content Include="admintema\js\owl.carousel.min.js" />
+    <Content Include="admintema\js\password-meter\password-meter-active.js" />
+    <Content Include="admintema\js\password-meter\pwstrength-bootstrap.min.js" />
+    <Content Include="admintema\js\password-meter\zxcvbn.js" />
+    <Content Include="admintema\js\pdf\jquery.media.js" />
+    <Content Include="admintema\js\pdf\pdf-active.js" />
+    <Content Include="admintema\js\peity\jquery.peity.min.js" />
+    <Content Include="admintema\js\peity\peity-active.js" />
+    <Content Include="admintema\js\plugins.js" />
+    <Content Include="admintema\js\rangle-slider\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="admintema\js\rangle-slider\jquery-ui-touch-punch.min.js" />
+    <Content Include="admintema\js\rangle-slider\rangle-active.js" />
+    <Content Include="admintema\js\scrollbar\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="admintema\js\scrollbar\mCustomScrollbar-active.js" />
+    <Content Include="admintema\js\select2\select2-active.js" />
+    <Content Include="admintema\js\select2\select2.full.min.js" />
+    <Content Include="admintema\js\sparkline\jquery.charts-sparkline.js" />
+    <Content Include="admintema\js\sparkline\jquery.sparkline.min.js" />
+    <Content Include="admintema\js\sparkline\sparkline-active.js" />
+    <Content Include="admintema\js\summernote\summernote-active.js" />
+    <Content Include="admintema\js\summernote\summernote.min.js" />
+    <Content Include="admintema\js\tab.js" />
+    <Content Include="admintema\js\tawk-chat.js" />
+    <Content Include="admintema\js\touchspin\jquery.bootstrap-touchspin.min.js" />
+    <Content Include="admintema\js\touchspin\touchspin-active.js" />
+    <Content Include="admintema\js\tree-line\jstree.active.js" />
+    <Content Include="admintema\js\tree-line\jstree.min.js" />
+    <Content Include="admintema\js\vendor\jquery-1.12.4.min.js" />
+    <Content Include="admintema\js\vendor\modernizr-2.8.3.min.js" />
+    <Content Include="admintema\js\vendor\modernizr-custom.js" />
+    <Content Include="admintema\js\wizard\jquery.steps.js" />
+    <Content Include="admintema\js\wizard\steps-active.js" />
+    <Content Include="admintema\js\wow.min.js" />
+    <Content Include="admintema\library-assets.html" />
+    <Content Include="admintema\line-charts.html" />
+    <Content Include="admintema\lock.html" />
+    <Content Include="admintema\login.html" />
+    <Content Include="admintema\mailbox-compose.html" />
+    <Content Include="admintema\mailbox-view.html" />
+    <Content Include="admintema\mailbox.html" />
+    <Content Include="admintema\modals.html" />
+    <Content Include="admintema\multi-upload.html" />
+    <Content Include="admintema\notifications.html" />
+    <Content Include="admintema\password-meter.html" />
+    <Content Include="admintema\password-recovery.html" />
+    <Content Include="admintema\pdf-viewer.html" />
+    <Content Include="admintema\peity.html" />
+    <Content Include="admintema\preloader.html" />
+    <Content Include="admintema\professor-profile.html" />
+    <Content Include="admintema\register.html" />
+    <Content Include="admintema\rounded-chart.html" />
+    <Content Include="admintema\sparkline.html" />
+    <Content Include="admintema\static-table.html" />
+    <Content Include="admintema\student-profile.html" />
+    <Content Include="admintema\style.css" />
+    <Content Include="admintema\tabs.html" />
+    <Content Include="admintema\tinymc.html" />
+    <Content Include="admintema\tree-view.html" />
+    <Content Include="admintema\widgets.html" />
+    <Content Include="admintema\x-editable.html" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\styling.css" />
+    <Content Include="css\util.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="fonts\JosefinSans\OFL.txt" />
+    <Content Include="fonts\source-sans-pro\OFL.txt" />
+    <Content Include="fonts\ubuntu\UFL.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="fonts\JosefinSans\JosefinSans-Bold.ttf" />
+    <Content Include="fonts\JosefinSans\JosefinSans-BoldItalic.ttf" />
+    <Content Include="fonts\JosefinSans\JosefinSans-Italic.ttf" />
+    <Content Include="fonts\JosefinSans\JosefinSans-Light.ttf" />
+    <Content Include="fonts\JosefinSans\JosefinSans-LightItalic.ttf" />
+    <Content Include="fonts\JosefinSans\JosefinSans-Regular.ttf" />
+    <Content Include="fonts\JosefinSans\JosefinSans-SemiBold.ttf" />
+    <Content Include="fonts\JosefinSans\JosefinSans-SemiBoldItalic.ttf" />
+    <Content Include="fonts\JosefinSans\JosefinSans-Thin.ttf" />
+    <Content Include="fonts\JosefinSans\JosefinSans-ThinItalic.ttf" />
+    <Content Include="fonts\source-sans-pro\SourceSansPro-Black.ttf" />
+    <Content Include="fonts\source-sans-pro\SourceSansPro-BlackItalic.ttf" />
+    <Content Include="fonts\source-sans-pro\SourceSansPro-Bold.ttf" />
+    <Content Include="fonts\source-sans-pro\SourceSansPro-BoldItalic.ttf" />
+    <Content Include="fonts\source-sans-pro\SourceSansPro-ExtraLight.ttf" />
+    <Content Include="fonts\source-sans-pro\SourceSansPro-ExtraLightItalic.ttf" />
+    <Content Include="fonts\source-sans-pro\SourceSansPro-Italic.ttf" />
+    <Content Include="fonts\source-sans-pro\SourceSansPro-Light.ttf" />
+    <Content Include="fonts\source-sans-pro\SourceSansPro-LightItalic.ttf" />
+    <Content Include="fonts\source-sans-pro\SourceSansPro-Regular.ttf" />
+    <Content Include="fonts\source-sans-pro\SourceSansPro-SemiBold.ttf" />
+    <Content Include="fonts\source-sans-pro\SourceSansPro-SemiBoldItalic.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-Bold.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-BoldItalic.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-Italic.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-Light.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-LightItalic.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-Medium.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-MediumItalic.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-Regular.ttf" />
+    <Content Include="admintema\css\bootstrap.min.css.map" />
+    <Content Include="admintema\css\metisMenu\metisMenu.min.css.map" />
+    <Content Include="admintema\css\summernote\fonts\summernote.eot" />
+    <Content Include="admintema\css\summernote\fonts\summernote.ttf" />
+    <Content Include="admintema\css\summernote\fonts\summernote.woff" />
+    <Content Include="admintema\fonts\educate-icon.ttf" />
+    <Content Include="admintema\fonts\educate-icon.woff" />
+    <Content Include="admintema\fonts\fontawesome-webfont.eot" />
+    <Content Include="admintema\fonts\fontawesome-webfont.ttf" />
+    <Content Include="admintema\fonts\fontawesome-webfont.woff" />
+    <Content Include="admintema\fonts\fontawesome-webfont.woff2" />
+    <Content Include="admintema\fonts\FontAwesome.otf" />
+    <Content Include="admintema\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="admintema\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="admintema\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="admintema\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="admintema\js\metisMenu\metisMenu.min.js.map" />
+    <Content Include="admintema\pdf\mamunur.pdf" />
+    <Content Include="admintema\README.md" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="vendor\animate\animate.css" />
+    <Content Include="vendor\animsition\css\animsition.css" />
+    <Content Include="vendor\animsition\css\animsition.min.css" />
+    <Content Include="vendor\animsition\js\animsition.js" />
+    <Content Include="vendor\animsition\js\animsition.min.js" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\bootstrap\js\popper.js" />
+    <Content Include="vendor\bootstrap\js\popper.min.js" />
+    <Content Include="vendor\bootstrap\js\tooltip.js" />
+    <Content Include="vendor\countdowntime\countdowntime.js" />
+    <Content Include="vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="vendor\daterangepicker\moment.js" />
+    <Content Include="vendor\daterangepicker\moment.min.js" />
+    <Content Include="vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="vendor\select2\select2.css" />
+    <Content Include="vendor\select2\select2.js" />
+    <Content Include="vendor\select2\select2.min.css" />
+    <Content Include="vendor\select2\select2.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\TumListe.cshtml" />
+    <Content Include="Views\Home\KullaniciGuncelle.cshtml" />
+    <Content Include="Views\Home\KullaniciEkle.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58260</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58260/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

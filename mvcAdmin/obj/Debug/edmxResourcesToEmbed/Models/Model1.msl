@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mvcfinalModelStoreContainer" CdmEntityContainer="mvcfinalEntities">
+    <EntitySetMapping Name="admins">
+      <EntityTypeMapping TypeName="mvcfinalModel.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="userad" ColumnName="userad" />
+          <ScalarProperty Name="usersifre" ColumnName="usersifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="musterilers">
+      <EntityTypeMapping TypeName="mvcfinalModel.musteriler">
+        <MappingFragment StoreEntitySet="musteriler">
+          <ScalarProperty Name="musteriid" ColumnName="musteriid" />
+          <ScalarProperty Name="musteriad" ColumnName="musteriad" />
+          <ScalarProperty Name="musterisoyad" ColumnName="musterisoyad" />
+          <ScalarProperty Name="musterisehir" ColumnName="musterisehir" />
+          <ScalarProperty Name="musteritc" ColumnName="musteritc" />
+          <ScalarProperty Name="musteritelefon" ColumnName="musteritelefon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="kisiDetay" FunctionName="mvcfinalModel.Store.kisiDetay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="mvcfinalModel.kisiDetay_Result">
+          <ScalarProperty Name="musteriid" ColumnName="musteriid" />
+          <ScalarProperty Name="musteriad" ColumnName="musteriad" />
+          <ScalarProperty Name="musterisoyad" ColumnName="musterisoyad" />
+          <ScalarProperty Name="musterisehir" ColumnName="musterisehir" />
+          <ScalarProperty Name="musteritc" ColumnName="musteritc" />
+          <ScalarProperty Name="musteritelefon" ColumnName="musteritelefon" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="kisiEkle" FunctionName="mvcfinalModel.Store.kisiEkle" />
+    <FunctionImportMapping FunctionImportName="kisiGuncelle" FunctionName="mvcfinalModel.Store.kisiGuncelle" />
+    <FunctionImportMapping FunctionImportName="kisiSil" FunctionName="mvcfinalModel.Store.kisiSil" />
+  </EntityContainerMapping>
+</Mapping>

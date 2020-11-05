@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mvcfinalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usersifre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="musteriler">
+    <Key>
+      <PropertyRef Name="musteriid" />
+    </Key>
+    <Property Name="musteriid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="musteriad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="musterisoyad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="musterisehir" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="musteritc" Type="bigint" Nullable="false" />
+    <Property Name="musteritelefon" Type="bigint" Nullable="false" />
+  </EntityType>
+  <Function Name="kisiDetay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="kisiEkle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userad" Type="varchar" Mode="In" />
+    <Parameter Name="usersoyad" Type="varchar" Mode="In" />
+    <Parameter Name="usersehir" Type="varchar" Mode="In" />
+    <Parameter Name="usertc" Type="bigint" Mode="In" />
+    <Parameter Name="usertelefon" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="kisiGuncelle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="userad" Type="varchar" Mode="In" />
+    <Parameter Name="usersoyad" Type="varchar" Mode="In" />
+    <Parameter Name="usersehir" Type="varchar" Mode="In" />
+    <Parameter Name="usertc" Type="bigint" Mode="In" />
+    <Parameter Name="usertelefon" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="kisiSil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userid" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="mvcfinalModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="musteriler" EntityType="Self.musteriler" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

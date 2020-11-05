@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mvcfinalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usersifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="musteriler">
+    <Key>
+      <PropertyRef Name="musteriid" />
+    </Key>
+    <Property Name="musteriid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="musteriad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="musterisoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="musterisehir" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="musteritc" Type="Int64" Nullable="false" />
+    <Property Name="musteritelefon" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="mvcfinalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="admins" EntityType="Self.admin" />
+    <EntitySet Name="musterilers" EntityType="Self.musteriler" />
+    <FunctionImport Name="kisiDetay" ReturnType="Collection(mvcfinalModel.kisiDetay_Result)">
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="kisiEkle">
+      <Parameter Name="userad" Mode="In" Type="String" />
+      <Parameter Name="usersoyad" Mode="In" Type="String" />
+      <Parameter Name="usersehir" Mode="In" Type="String" />
+      <Parameter Name="usertc" Mode="In" Type="Int64" />
+      <Parameter Name="usertelefon" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="kisiGuncelle">
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="userad" Mode="In" Type="String" />
+      <Parameter Name="usersoyad" Mode="In" Type="String" />
+      <Parameter Name="usersehir" Mode="In" Type="String" />
+      <Parameter Name="usertc" Mode="In" Type="Int64" />
+      <Parameter Name="usertelefon" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="kisiSil">
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="kisiDetay_Result">
+    <Property Type="Int32" Name="musteriid" Nullable="false" />
+    <Property Type="String" Name="musteriad" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="musterisoyad" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="musterisehir" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="musteritc" Nullable="false" />
+    <Property Type="Int64" Name="musteritelefon" Nullable="false" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,56 @@
+﻿@model mvcAdmin.Models.admin
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+    <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="~/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+
+    <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+    <link href="~/css/styling.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/vendor/animsition/css/animsition.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="~/vendor/daterangepicker/daterangepicker.css">
+
+    <link rel="stylesheet" type="text/css" href="~/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+
+</head>
+<body class="main-bg">
+    <div class="login-container text-c animated flipInX">
+        <div>
+            <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
+        </div>
+        <h3 class="text-whitesmoke">Admin Log In </h3>
+        <p class="text-whitesmoke">Sign In</p>
+        <div class="container-content">
+            <form class="margin-t" action="/Login/Index" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="userad" placeholder="Username" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="usersifre" placeholder="*****" required="">
+                </div>
+                <button type="submit" class="form-button button-l margin-b">Sign In</button>
+                <div class="container-login100-form-btn" style="color:white">
+                    @ViewBag.hata
+                </div>
+
+            </form>
+            <p class="margin-t text-whitesmoke"><small> Adem Durgunkaya &copy; 2020</small> </p>
+        </div>
+    </div>
+</body>
+</html>
