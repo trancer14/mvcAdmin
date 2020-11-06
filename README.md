@@ -1,5 +1,5 @@
 # mvcAdmin
-Basic Admin dashboard with login screen and edit users.
+Basic MVC Admin dashboard with entity database and login screen.
 
 To Login: User name and Password is admin.
 
