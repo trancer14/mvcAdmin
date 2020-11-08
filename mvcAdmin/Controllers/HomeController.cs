@@ -9,7 +9,7 @@ namespace mvcAdmin.Controllers
 {
     public class HomeController : Controller
     {
-        mvcfinalEntities veri = new mvcfinalEntities();
+        durgunka_1Entities veri = new durgunka_1Entities();
         public ActionResult Index()
         {
             if (Session["id"] == null)

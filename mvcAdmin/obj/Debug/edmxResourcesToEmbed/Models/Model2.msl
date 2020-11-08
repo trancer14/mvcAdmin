@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="durgunka_1ModelStoreContainer" CdmEntityContainer="durgunka_1Entities">
+    <EntitySetMapping Name="admins">
+      <EntityTypeMapping TypeName="durgunka_1Model.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="userad" ColumnName="userad" />
+          <ScalarProperty Name="usersifre" ColumnName="usersifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="musterilers">
+      <EntityTypeMapping TypeName="durgunka_1Model.musteriler">
+        <MappingFragment StoreEntitySet="musteriler">
+          <ScalarProperty Name="musteriid" ColumnName="musteriid" />
+          <ScalarProperty Name="musteriad" ColumnName="musteriad" />
+          <ScalarProperty Name="musterisoyad" ColumnName="musterisoyad" />
+          <ScalarProperty Name="musterisehir" ColumnName="musterisehir" />
+          <ScalarProperty Name="musteritc" ColumnName="musteritc" />
+          <ScalarProperty Name="musteritelefon" ColumnName="musteritelefon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="kisiEkle" FunctionName="durgunka_1Model.Store.kisiEkle" />
+    <FunctionImportMapping FunctionImportName="kisiGuncelle" FunctionName="durgunka_1Model.Store.kisiGuncelle" />
+    <FunctionImportMapping FunctionImportName="kisiSil" FunctionName="durgunka_1Model.Store.kisiSil" />
+  </EntityContainerMapping>
+</Mapping>

@@ -9,7 +9,7 @@ namespace mvcAdmin.Controllers
 {
     public class LoginController : Controller
     {
-        mvcfinalEntities veri = new mvcfinalEntities();
+        durgunka_1Entities veri = new durgunka_1Entities();
         
         public ActionResult Index()
         {
